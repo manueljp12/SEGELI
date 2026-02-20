@@ -1,0 +1,27 @@
+.inventario-container {
+    text-align: center;
+    width: 100%;
+}
+
+h1, p{
+    color: white;
+    font-weight: bold;
+}
+
+.tabla-inventario {
+    width: 100%;
+    border-collapse: collapse; /* muy importante para tablas */
+}
+
+.tabla-inventario thead {
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.637);
+}
+#tablaInventario {
+    background-color: rgba(255, 255, 255, 0.301);
+}
+
+.tabla-inventario th,
+.tabla-inventario td {
+    padding: 10px;
+}

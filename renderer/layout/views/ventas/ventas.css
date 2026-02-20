@@ -1,0 +1,38 @@
+.ventas-container {
+    padding: 20px;
+}
+
+.buscador {
+    position: relative;
+    max-width: 420px;
+    margin-bottom: 10px;
+}
+
+#buscarProducto {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+}
+
+#listaProductos {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #ddd;
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 20;
+}
+
+#listaProductos li {
+    padding: 8px 10px;
+}
+
+#listaProductos li:hover {
+    background: #f2f2f2;
+}

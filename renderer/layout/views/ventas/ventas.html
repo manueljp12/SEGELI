@@ -1,0 +1,53 @@
+<div class="ventas-container">
+    <h1>Ventas</h1>
+    <p> registrar salida de productos</p>
+
+<!-- Buscar Producto-->
+    <div class="buscador">
+        <input type="text" id="buscarProducto" placeholder="Buscar producto...">
+        <ul id="listaProductos"></ul>
+    </div>
+
+<!--Datos del Producto-->
+    <div>
+        <input type="number" id="cantidad" placeholder="Cantidad" min="1">
+        <input type="text" id="precio" placeholder="Precio" disabled>
+        <button id="btnAgregarVenta">Agregar</button>
+    </div>
+
+<!--Tabla con Productos Seleccionado-->
+
+    <table class="tabla-ventas">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Subtotal</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+
+        <tbody id="tablaVentas">
+
+            <tr>
+                <td colspan="5">No hay productos agregados</td>
+            </tr>
+            
+        </tbody>
+
+    </table>
+
+<!--Total-->
+    <div class="Total">
+        <strong>Total: $</strong>
+        <span id="totalVenta">0.00</span>
+    </div>
+
+<!--Observacion-->
+<textarea id="observacion" placeholder="Observacion general"></textarea>
+
+<!--Guardar-->
+<button id="btnGuardarVentas">Realizar Venta</button>
+
+</div>

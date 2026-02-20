@@ -1,0 +1,36 @@
+<div class="recepcion-container">
+
+    <h1>Recepcion de Productos</h1>
+
+    <p class="detalles">Registrar entrada de mercancia</p>
+
+    <div >
+        <input type="text" id="buscarProducto" placeholder="Buscar producto...">
+
+        <ul id="listaProductos"></ul>
+
+        <input type="number" id="cantidad" placeholder="cantidad" min="1" required>
+
+        <input type="number" id="precioFactura" placeholder="Precio factura" min="0" step="0.01" required>
+
+        <button id="btnAgregar">Agregar producto</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio factura</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody id="tablaRecepcion"></tbody>
+        </table>
+
+        <textarea id="observacion" placeholder="Obserbacion general"></textarea>
+        <button id="btnGuardar"> Guardar recepcion</button>
+
+    </div>
+
+    <p id="mensaje">holaaaaa</p>
+</div>
