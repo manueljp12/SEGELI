@@ -33,6 +33,8 @@ async function login(usuario, password) {
 
     return {
       success: true,
+      nombre: user.nombres,
+      apellido: user.apellidos,
       idUsuario: user.idUsuario,
       rol: user.idRol,
       usuario: user.usuario

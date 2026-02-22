@@ -2,24 +2,44 @@ let currentScript = null;
 let currentStyle = null;
 let loadSeq = 0;
 let vistasPermitidas = new Set(['home']);
+const Swal = window.Swal;
 
 function configurarHeaderSesion() {
-  const usuarioEl = document.getElementById('usuarioLoguin');
+  const usuarioEl = document.getElementById('usuarioLogin');
   const btnLogout = document.getElementById('btnLogout');
 
   if (btnLogout) {
     btnLogout.addEventListener('click', async () => {
-      if(confirm("¿Esta seguro que desea cerrar secion?")){
-        alert("Se ha cerrado secion")
-        try {
+      try {
+        if (Swal && typeof Swal.fire === 'function') {
+          const result = await Swal.fire({
+            title: '¿Cerrar sesión?',
+            text: 'Se cerrará tu sesión actual',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí',
+            cancelButtonText: 'Cancelar'
+          });
+
+          if (!result.isConfirmed) return;
+          await window.api.logout();
+          return;
+        }
+
+        const confirmado = window.confirm('¿Cerrar sesión?\nSe cerrará tu sesión actual.');
+        if (!confirmado) return;
         await window.api.logout();
-        } 
-        catch (error) {
-            console.error('Error al cerrar sesion:', error);
-          }
-      }
-      else{
-        return;
+      } catch (error) {
+        console.error('Error al cerrar sesión:', error);
+        if (Swal && typeof Swal.fire === 'function') {
+          await Swal.fire({
+            title: 'Error',
+            text: 'No se pudo cerrar la sesión',
+            icon: 'error'
+          });
+        } else {
+          window.alert('No se pudo cerrar la sesión');
+        }
       }
     });
   }
@@ -27,7 +47,9 @@ function configurarHeaderSesion() {
   window.api.obtenerSesion()
     .then((response) => {
       if (!usuarioEl) return;
-      const usuario = response?.sesion?.usuario;
+      const nombre= response?.sesion?.nombre ?? '';
+      const apellido= response?.sesion?.apellido ?? '';
+      const usuario= `${nombre} ${apellido}`.trim();
       usuarioEl.textContent = usuario ? `Usuario: ${usuario}` : 'Usuario no disponible';
     })
     .catch((error) => {
@@ -83,7 +105,6 @@ function loadView(viewName) {
       }
 
       const html = res.html || '';
-      window.onclick = null;
       content.innerHTML = html;
 
       if (currentScript) {
@@ -99,6 +120,7 @@ function loadView(viewName) {
       currentScript = document.createElement('script');
       currentScript.src = `./views/${viewName}/${viewName}.js?v=${seq}`;
       currentScript.onload = function () {
+        if (seq !== loadSeq) return;
         const initFn = 'init' + capitalize(viewName);
         if (typeof window[initFn] === 'function') {
           window[initFn]();

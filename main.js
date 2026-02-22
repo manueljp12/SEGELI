@@ -64,7 +64,13 @@ app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) creat
 ipcMain.handle('login', async (event, usuario, password) => {
   const result = await login(usuario, password);
   if (result.success) {
-    sesionActual = { usuario: result.usuario, idUsuario: result.idUsuario, rol: result.rol };
+    sesionActual = { 
+      usuario: result.usuario, 
+      idUsuario: result.idUsuario, 
+      rol: result.rol, 
+      nombre: result.nombre,
+      apellido: result.apellido
+    };
     if (loginWin) { loginWin.close(); loginWin = null; }
     createMainWindow();
   }
@@ -87,7 +93,7 @@ ipcMain.handle('layout:vistas-permitidas', async () => {
 ipcMain.handle('home:datos', async () => { return await obtenerDatosHome(); });
 ipcMain.handle('layout:load-view', async (event, viewName) => {
   try {
-    if (!sesionActual) {
+    if (!sesionActual) {  
       return { success: false, message: 'Debe iniciar sesion' };
     }
     if (!VISTAS_PERMITIDAS.has(viewName)) {
