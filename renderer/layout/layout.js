@@ -3,6 +3,39 @@ let currentStyle = null;
 let loadSeq = 0;
 let vistasPermitidas = new Set(['home']);
 
+function configurarHeaderSesion() {
+  const usuarioEl = document.getElementById('usuarioLoguin');
+  const btnLogout = document.getElementById('btnLogout');
+
+  if (btnLogout) {
+    btnLogout.addEventListener('click', async () => {
+      if(confirm("¿Esta seguro que desea cerrar secion?")){
+        alert("Se ha cerrado secion")
+        try {
+        await window.api.logout();
+        } 
+        catch (error) {
+            console.error('Error al cerrar sesion:', error);
+          }
+      }
+      else{
+        return;
+      }
+    });
+  }
+
+  window.api.obtenerSesion()
+    .then((response) => {
+      if (!usuarioEl) return;
+      const usuario = response?.sesion?.usuario;
+      usuarioEl.textContent = usuario ? `Usuario: ${usuario}` : 'Usuario no disponible';
+    })
+    .catch((error) => {
+      if (usuarioEl) usuarioEl.textContent = 'Usuario no disponible';
+      console.error('No se pudo obtener la sesion actual:', error);
+    });
+}
+
 function puedeAccederVista(viewName) {
   return vistasPermitidas.has(viewName);
 }
@@ -96,6 +129,7 @@ function capitalize(str) {
 }
 
 window.onload = async function () {
+  configurarHeaderSesion();
   await cargarPermisosDeVista();
   const vistaInicial = puedeAccederVista('home') ? 'home' : (Array.from(vistasPermitidas)[0] || 'home');
   loadView(vistaInicial);

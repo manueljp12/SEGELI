@@ -1,23 +1,141 @@
-.recepcion-container{
+:root{
+    --radio: 8px;
+    --color-primario:white;
+    --color-secundario:rgba(0, 0, 0, 0.822);
+    --input-seleccionado:4px solid rgb(14, 168, 14);
+    --color-terciario:rgba(0, 0, 0, 0.397);
+    --color-cuarto:rgba(255, 255, 255, 0.459);
+    --borde: none;
+    --outline: none;
+}
+
+.title-reception{
     text-align: center;
+    color: var(--color-primario);
 }
-
-.recepcion-container h1{
-    color: white;
-}
-
 .detalles{
-    color: white;
     backdrop-filter: blur(2px);
 }
 
-.recepcion-container label{
-    color: white;
+.buscadorRecepcion{
+    text-align: center;
+    padding-top: 35px;
 }
 
-input{
-    border-radius: 5px;
+.buscador-recepcion{
+    text-align: center;
+    width:500px ;
+    height: 30px;
+    border-radius: var(--radio);
+    background-color: var(--color-cuarto);
+    border: var(--borde);
+    outline: var(--outline);
+    color: var(--color-secundario);
+    font-weight: 500;
+    font-weight: bold;
+    font-size: large;
+    
+}
+
+.buscador-recepcion::placeholder{
+    color: rgba(0, 0, 0, 0.61);
+}
+.buscador-recepcion:focus{
+border-bottom: var(--input-seleccionado);
+}
+
+.productos-reception{
+    color: rgba(0, 0, 0, 0.575);
+    font-weight: bold;
+}
+.productosRecepcion{
+    background: var(--color-cuarto);
+    width: 250px;
+    border-radius: 3px;
+}
+
+.cantidad-reception,
+.precio-factura{
+    width: 150px;
+    height: 20px;
+    padding: 5px 15px;
+    font-size: larger;
+    border-radius: var(--radio);
+    border: var(--borde);
+    outline: var(--outline); 
+}
+
+.datosRecepcion{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.option-reception{
+    display: flex;
+    gap: 20px;
+}
+
+.btn-agregar{
+    border-radius: var(--radio);
+    border: var(--borde);
+    outline: var(--outline);
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight:bold;
+    background:#4d8f4b;
+    color: var(--color-primario);
+}
+
+.btn-agregar:hover{
+    background:#00f514;
+    color:rgba(24, 24, 24, 0.747);
+}
+
+.tabla-recepcion{
+    width: 100%;
+    border-collapse: collapse;
+}
+.tabla-recepcion thead{
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+.tablaRecepcion{
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#tablaRecepcion{
+    background: var(--color-cuarto);
+}
+
+.tabla-recepcion td{
+    padding: 10px 0px;
+}
+
+#tablaRecepcion tr{
+    border-bottom: 1px solid var(--color-terciario);
+    
+}
+
+.observacion-guardar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#observacion{
     border: none;
+    outline: var(--outline);
+    border-radius: var(--radio);
+    height: 50px;
 }
 
-
+#observacion:focus{
+    border-bottom: var(--input-seleccionado);
+}
