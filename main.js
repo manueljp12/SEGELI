@@ -14,6 +14,7 @@ const devolucionCtrl = require('./controllers/devolucionController');
 let loginWin = null;
 let mainWin = null;
 let sesionActual = null;
+
 const VISTAS_PERMITIDAS = new Set(['home', 'inventario', 'recepcion', 'ventas', 'devoluciones', 'reportes', 'usuarios']);
 const VISTAS_POR_ROL = Object.freeze({
   1: ['home', 'inventario', 'recepcion', 'ventas', 'devoluciones', 'reportes', 'usuarios'],

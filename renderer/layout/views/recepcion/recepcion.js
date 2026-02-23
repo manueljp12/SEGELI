@@ -63,6 +63,7 @@ function initRecepcion() {
         limpiarCampos();
     };
 
+
     btnGuardar.onclick = async () => {
         if (productosRecepcion.length === 0) {
             alert('Agrega al menos un producto');

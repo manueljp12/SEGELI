@@ -1,7 +1,24 @@
-.ventas-container {
-    padding: 20px;
+:root{
+    --radio: 8px;
+    --primer-color:white;
+    --segundo-color:rgba(0, 0, 0, 0.822);
+    --input-seleccionado:4px solid rgb(14, 168, 14);
+    --tercer-color:rgba(0, 0, 0, 0.397);
+    --cuarto-color:rgba(255, 255, 255, 0.459);
+    --borde: none;
+    --outline: none;
 }
 
+.title-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: var(--primer-color);
+}
+.detalles-venta{
+    backdrop-filter: blur(2px);
+}
+/*
 .buscador {
     position: relative;
     max-width: 420px;
@@ -36,3 +53,4 @@
 #listaProductos li:hover {
     background: #f2f2f2;
 }
+*/
