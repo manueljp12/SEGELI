@@ -3,10 +3,8 @@
     --color-primario:white;
     --color-secundario:rgba(0, 0, 0, 0.822);
     --input-seleccionado:4px solid rgb(14, 168, 14);
-    --color-terciario:rgba(0, 0, 0, 0.397);
-    --color-cuarto:rgba(255, 255, 255, 0.459);
-    --borde: none;
-    --outline: none;
+    --color-terciario:rgba(0, 0, 0, 0.35);
+    --color-cuarto:rgba(255, 255, 255, 0.671);
 }
 
 .title-reception{
@@ -27,26 +25,31 @@
     width:500px ;
     height: 30px;
     border-radius: var(--radio);
-    background-color: var(--color-cuarto);
-    border: var(--borde);
-    outline: var(--outline);
-    color: var(--color-secundario);
-    font-weight: 500;
+    background-color: var(--color-terciario);
+    border: none;
+    outline: none;
+    color: var(--color-cuarto);
     font-weight: bold;
     font-size: large;
-    
+    transition: 0.4s;
 }
 
 .buscador-recepcion::placeholder{
-    color: rgba(0, 0, 0, 0.61);
+    color: #fffefe65;
 }
 .buscador-recepcion:focus{
-border-bottom: var(--input-seleccionado);
+    border-bottom: var(--input-seleccionado);
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--color-primario);
 }
 
 .productos-reception{
-    color: rgba(0, 0, 0, 0.575);
+    color: rgba(0, 0, 0, 0.712);
     font-weight: bold;
+}
+.productos-reception:hover{
+    background-color:rgba(255, 255, 255, 0.918) ;
+    border: 1px solid black;
 }
 .productosRecepcion{
     background: var(--color-cuarto);
@@ -61,8 +64,13 @@ border-bottom: var(--input-seleccionado);
     padding: 5px 15px;
     font-size: larger;
     border-radius: var(--radio);
-    border: var(--borde);
-    outline: var(--outline); 
+    border: none;
+    outline: none; 
+    transition: 0.5s;
+}
+.cantidad-reception:focus,
+.precio-factura:focus{
+    border:1.5px solid rgb(14, 168, 14);
 }
 
 .datosRecepcion{

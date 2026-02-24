@@ -182,7 +182,8 @@ async function eliminarUsuario(idUsuario, idSesionActual = null) {
     } catch (error) {
         console.error('Error eliminando usuario:', error);
         if (esErrorFk(error)) {
-            return { success: false, message: 'No se puede eliminar: el usuario tiene movimientos asociados' };
+            return { success: false, 
+                message: 'No se puede eliminar: el usuario tiene movimientos asociados' };
         }
         return { success: false, message: 'Error al eliminar usuario' };
     }

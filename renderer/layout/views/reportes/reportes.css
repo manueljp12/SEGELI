@@ -1,3 +1,15 @@
+:root{
+    --radio: 8px;
+    --color-primario:white;
+    --color-secundario:rgba(0, 0, 0, 0.822);
+    --input-seleccionado:4px solid rgb(14, 168, 14);
+    --color-terciario:rgba(0, 0, 0, 0.35);
+    --color-cuarto:rgba(255, 255, 255, 0.671);
+}
+.container-reportes{
+    width: 100%;
+    height: 100vh;
+}
 .resultados-header {
     display: flex;
     justify-content: space-between;

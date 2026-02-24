@@ -1,16 +1,23 @@
 <div class="ventas-container">
     <div class="title-container">
-        <h1 class="titleVenta">Ventas</h1>
+        <h1 class="titleVenta">💰 Ventas</h1>
         <p class="detalles-venta" > Registrar salida de productos</p>
     </div>
-    <div class="buscador">
-        <input type="text" id="buscarProducto" placeholder="Buscar producto...">
-        <ul id="listaProductos"></ul>
+    <div class="buscadorVentas">
+        <input class="buscador-producto" type="text" id="buscarProducto" 
+            placeholder="Buscar producto...">
     </div>
-    <div>
-        <input type="number" id="cantidad" placeholder="Cantidad" min="1">
-        <input type="text" id="precio" placeholder="Precio" disabled>
-        <button id="btnAgregarVenta">Agregar</button>
+
+    <div class="select-producto">
+        <ul class="lista-productos" id="listaProductos"></ul>
+    </div>
+    
+    <div class="opciones-ventas">
+        <div class="datos-venta">
+            <input class="cantidad-venta" type="number" id="cantidad" placeholder="Cantidad" min="1">
+            <input class="precio-venta" type="text" id="precio" placeholder="Precio" disabled>
+        </div>
+        <button class="btn-agregar-venta" id="btnAgregarVenta">Agregar</button>
     </div>
 
     <table class="tabla-ventas">
