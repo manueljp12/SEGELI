@@ -10,7 +10,7 @@ async function cargarInventario() {
         if (!response.data || response.data.length === 0) {
             const tr = document.createElement('tr');
             const td = document.createElement('td');
-            td.colSpan = 5;
+            td.colSpan = 6;
             td.textContent = 'No hay productos registrados';
             tr.appendChild(td);
             tabla.appendChild(tr);
@@ -31,6 +31,22 @@ async function cargarInventario() {
                 td.textContent = String(v);
                 tr.appendChild(td);
             });
+
+            const tdOpciones = document.createElement('td');
+
+            const btnEditar = document.createElement('button');
+            btnEditar.textContent = 'Editar';
+            btnEditar.classList.add('btn-editar-inventario');
+
+            const btnEliminar = document.createElement('button');
+            btnEliminar.textContent = 'Eliminar';
+            btnEliminar.classList.add('btn-eliminar-inventario');
+
+            tdOpciones.appendChild(btnEditar);
+            tdOpciones.appendChild(btnEliminar);
+
+            tr.appendChild(tdOpciones);
+
             tabla.appendChild(tr);
         });
     } catch (error) {

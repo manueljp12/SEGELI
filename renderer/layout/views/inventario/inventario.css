@@ -25,3 +25,34 @@ h1, p{
 .tabla-inventario td {
     padding: 10px;
 }
+
+.header{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.buscador-inventario{
+    text-align: center;
+    width:500px ;
+    height: 30px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.35);
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.671);
+    font-weight: bold;
+    font-size: large;
+    transition: 0.4s;
+
+}
+
+.buscador-inventario::placeholder{
+    color: #fffefe65;
+}
+
+.buscador-inventario:focus{
+    border-bottom: 4px solid rgb(14, 168, 14);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+}
