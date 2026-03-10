@@ -28,7 +28,7 @@ CREATE TABLE usuarios (
   cedula VARCHAR(20) NOT NULL,
   nombres VARCHAR(45) NOT NULL,
   apellidos VARCHAR(45) NOT NULL,
-  correo VARCHAR(100), -- opcional, ya no único para permitir NULL
+  correo VARCHAR(100), 
   telefono VARCHAR(15),
   idRol INT NOT NULL,
   PRIMARY KEY (idUsuario),
@@ -46,7 +46,7 @@ CREATE TABLE productos (
   nombreProducto VARCHAR(100) NOT NULL,
   idCategoria INT NOT NULL,
   cantidad INT NOT NULL DEFAULT 0,
-  stockMinimo INT NOT NULL DEFAULT 0, -- para alertas
+  stockMinimo INT NOT NULL DEFAULT 0,
   precioFactura DECIMAL(10,2) NOT NULL,
   precioDetal DECIMAL(10,2) NOT NULL,
   estado ENUM('activo','inactivo') DEFAULT 'activo',

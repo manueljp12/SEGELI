@@ -28,7 +28,7 @@ CREATE TABLE usuarios (
   cedula VARCHAR(20) NOT NULL,
   nombres VARCHAR(45) NOT NULL,
   apellidos VARCHAR(45) NOT NULL,
-  correo VARCHAR(100), -- opcional, ya no único para permitir NULL
+  correo VARCHAR(100), 
   telefono VARCHAR(15),
   idRol INT NOT NULL,
   PRIMARY KEY (idUsuario),
@@ -46,7 +46,7 @@ CREATE TABLE productos (
   nombreProducto VARCHAR(100) NOT NULL,
   idCategoria INT NOT NULL,
   cantidad INT NOT NULL DEFAULT 0,
-  stockMinimo INT NOT NULL DEFAULT 0, -- para alertas
+  stockMinimo INT NOT NULL DEFAULT 0, 
   precioFactura DECIMAL(10,2) NOT NULL,
   precioDetal DECIMAL(10,2) NOT NULL,
   estado ENUM('activo','inactivo') DEFAULT 'activo',
@@ -134,3 +134,25 @@ CREATE TABLE anotaciones (
   CONSTRAINT fk_anot_usuario
     FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario)
 ) ENGINE=InnoDB;
+
+-- Tabla de devoluciones
+CREATE TABLE IF NOT EXISTS devoluciones (
+    idDevolucion INT AUTO_INCREMENT PRIMARY KEY,
+    fechaDevolucion DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    idUsuario INT NOT NULL,
+    idVenta INT NOT NULL,
+    motivo TEXT,
+    FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario),
+    FOREIGN KEY (idVenta) REFERENCES ventas(idVenta)
+);
+
+-- Tabla de devolucion_detalle
+CREATE TABLE IF NOT EXISTS devolucion_detalle (
+    idDevolucionDetalle INT AUTO_INCREMENT PRIMARY KEY,
+    idDevolucion INT NOT NULL,
+    idProducto INT NOT NULL,
+    cantidad INT NOT NULL,
+    precioUnitario DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (idDevolucion) REFERENCES devoluciones(idDevolucion),
+    FOREIGN KEY (idProducto) REFERENCES productos(idProducto)
+);
