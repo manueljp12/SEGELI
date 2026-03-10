@@ -1,0 +1,22 @@
+.recepcion-buscar {
+    margin-bottom: 20px;
+}
+
+.resultados {
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.resultado-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.resultado-item:hover {
+    background: #eee;
+}
+
+.hidden {
+    display: none;
+}

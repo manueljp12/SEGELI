@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background-image: url('../imagenes/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width:100% ;
+}
+
+h1{
+    color: white;
+    font-size: 70px;
+}
+
+.login{
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 360px;
+}
+
+.log{
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"]{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background:rgba(0, 0, 0, 0.45);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #fffefe65;
+}
+
+input:focus {
+    border-bottom-color: #00e0b8;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+input:hover{
+    background: rgba(255, 255, 255, 0.37);
+    color: #cac9c9;
+}
+
+.but {
+    text-align: center;
+    padding-top: 15px;
+}
+.but button{
+    padding:10px 25px;
+    border-radius: 15px;
+    border: none;
+    background: rgb(22, 175, 22);
+    cursor: pointer;
+    width: 100px;
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    
+    
+}
+
+.but button:hover {
+    
+    background: rgb(22, 88, 22);
+    color: rgb(168, 168, 168);
+}
+

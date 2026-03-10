@@ -1,0 +1,83 @@
+<section class="vista">
+    <header class="vista-header">
+        <h1 class="vista-titulo">Recepción de Productos</h1>
+        <p class="vista-descripcion">
+            Ingreso de productos nuevos o actualización de stock
+        </p>
+    </header>
+
+    <!-- BUSCADOR -->
+    <div class="recepcion-buscar">
+        <label>Buscar producto</label>
+        <input type="text" id="buscarProducto" placeholder="Nombre o código...">
+        <div id="resultadosBusqueda" class="resultados"></div>
+    </div>
+
+    <!-- boton agregar nuevo producto-->
+    <button id="btnNuevoProducto" class="btn-nuevo hidden">+ Registrar producto nuevo</button>
+
+    <!-- formulario para agregar nuevo producto-->
+    <div class="form-recepcion hidden" id="formProductoNuevo">
+
+        <h3>Registrar producto nuevo</h3>
+
+        <label>Nombre del producto</label>
+        <input type="text" id="nuevoNombre">
+
+        <label>Categoría</label>
+        <select id="nuevoCategoria"></select>
+
+        <label>Cantidad</label>
+        <input type="number" id="nuevoCantidad" min="1">
+
+        <label>Precio factura</label>
+        <input type="number" id="nuevoPrecioFactura">
+
+        <label>Precio detal</label>
+        <input type="number" id="nuevoPrecioDetal">
+
+        <label>Fecha vencimiento</label>
+        <input type="date" id="nuevoFecha">
+
+        <button id="btnEnviarNuevo">Enviar recepción</button>
+
+    </div>
+
+
+
+    <div id="resultadosProductos" class="resultados"></div>
+
+
+    <!-- FORMULARIO -->
+    <div class="form-recepcion hidden" id="formRecepcion">
+
+        <h3>Producto seleccionado</h3>
+
+        <input type="hidden" id="idProducto">
+
+        <label>Producto</label>
+        <input type="text" id="nombreProducto" disabled>
+
+        <label>Categoría</label>
+        <input type="text" id="categoriaProducto" disabled>
+
+        <label>Cantidad actual</label>
+        <input type="number" id="cantidadActual" disabled>
+
+        <label>Cantidad a ingresar</label>
+        <input type="number" id="cantidadIngreso" min="1">
+
+        <label>Precio factura</label>
+        <input type="number" id="precioFactura">
+
+        <label>Precio al detal</label>
+        <input type="number" id="precioDetal">
+
+        <label>Fecha vencimiento (opcional)</label>
+        <input type="date" id="fechaVencimiento">
+
+        <button id="btnConfirmar">Confirmar recepción</button>
+    </div>
+
+
+</section>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segeli-Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="butMenu" id="butMenu">
+            <span class="hamburguesa" >☰</span>
+        </nav>
+        <div class="usuario-log">
+            <span id="usuarioLogueado"></span>
+            <button id="logoutBtn">Salir</button>
+        </div>
+
+    </header>
+
+    <div class="layout">
+        <nav class="sidebar" id="sidebar">
+            <ul>
+                <li data-seccion="home">Inicio</li>
+                <li data-seccion="inventario">Inventario</li>
+                <li data-seccion="recepcion">Recepcion</li>
+                <li data-seccion="ventas">Ventas</li>
+                <li data-seccion="reportes">Reportes</li>
+                <li data-seccion="user">Gestion de Usuario</li>
+            </ul>
+        </nav>
+
+        <main class="content" id="contenido"></main>
+
+    </div>
+    <script src="layout.js"></script>
+</body>
+</html>

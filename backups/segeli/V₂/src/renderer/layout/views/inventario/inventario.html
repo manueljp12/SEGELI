@@ -1,0 +1,55 @@
+<section class="vista">
+    <header class="vista-header">
+        <h1 class="vista-titulo">Inventario</h1>
+        <P class="vista-descripcion">
+            consulta y control de productos en stock
+        </P>
+    </header>
+    <div class="inventario">
+        <input type="text" id="buscarProducto" placeholder="Buscar Producto....">
+
+        <table class="tabla-inventario">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaInventario"></tbody>
+        </table>
+
+    </div>
+
+    <div id="modalEditar" class="modal hidden"> 
+
+        <div class="modal-content"> 
+
+            <h2>Editar producto</h2>
+
+            <input type="hidden" id="editId"> 
+
+            <label>Producto</label> 
+
+            <input type="text" id="editNombre"> 
+
+            <label>Cantidad</label> <input type="number" id="editCantidad"> 
+
+            <label>Precio</label> <input type="number" id="editPrecio"> 
+
+            <div class="modal-buttons"> 
+
+                <button id="btnGuardar" class="btn-guardar">Guardar</button> 
+                <button id="btnCancelar" class="btn-cancelar">Cancelar</button> 
+
+            </div>
+
+        </div> 
+        
+    </div>
+
+</section>
