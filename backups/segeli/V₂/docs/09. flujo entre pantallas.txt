@@ -1,2 +1,0 @@
-login → menu (conopcion de cierre de sesion)
-menu → cada modulo (con opcion de regresar)

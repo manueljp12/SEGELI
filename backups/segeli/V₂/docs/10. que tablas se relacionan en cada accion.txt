@@ -1,6 +1,0 @@
-login → roles + usuarios
-recepcion → usuarios + recepcion + recepcion_detalles + producto
-venta → usuarios + ventas + productos
-inventario → productos
-gestion de usuarios → roles + usuario
-reportes → solo lectura

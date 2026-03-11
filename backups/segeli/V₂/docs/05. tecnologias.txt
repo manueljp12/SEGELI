@@ -1,3 +1,0 @@
-JavaScrpit
-MySQL
-Electron.js

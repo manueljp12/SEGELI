@@ -49,7 +49,6 @@ CREATE TABLE productos (
   stockMinimo INT NOT NULL DEFAULT 0, 
   precioFactura DECIMAL(10,2) NOT NULL,
   precioDetal DECIMAL(10,2) NOT NULL,
-  estado ENUM('activo','inactivo') DEFAULT 'activo',
   PRIMARY KEY (idProducto),
   UNIQUE KEY uk_producto_codigo (codigoProducto),
   UNIQUE KEY uk_producto_nombre (nombreProducto),
@@ -156,3 +155,17 @@ CREATE TABLE IF NOT EXISTS devolucion_detalle (
     FOREIGN KEY (idDevolucion) REFERENCES devoluciones(idDevolucion),
     FOREIGN KEY (idProducto) REFERENCES productos(idProducto)
 );
+
+-- USUARIOS PRUEBA
+INSERT INTO roles (tipo, descripcion) VALUES
+("Administrador", "Usuario con acceso completo al sistema"),
+("Vendedor", "Usuario con acceso solo a ventas, reportes y devoluciones");
+
+INSERT INTO categoria (nombreCategoria, descripcion)
+VALUES ("General", "Categoría inicial del sistema");
+
+INSERT INTO usuarios (usuario, password, cedula, nombres, apellidos, idRol)
+VALUES ("admin", "$10$ImfC0HEZZivRBQFYxUjtaOiltehZFx4tkRFP3NuBIpQmXDRb7ero2", "1234567891", "Pepito", "Perez", 1);
+
+INSERT INTO usuarios (usuario, password, cedula, nombres, apellidos, idRol)
+VALUES ("vendedor", "$10$ImfC0HEZZivRBQFYxUjtaOiltehZFx4tkRFP3NuBIpQmXDRb7ero2", "1234567892", "Vendedor", "Sistema", 2);
